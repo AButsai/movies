@@ -1,9 +1,9 @@
 import Container from 'components/Container';
 import Navigation from 'components/Navigation';
 import SearchForm from 'components/SearchForm';
-import s from './Header.module.scss';
+import s from './HeaderMain.module.scss';
 
-const Header = () => {
+const HeaderMain = () => {
   return (
     <header className={s.header}>
       <Container>
@@ -14,4 +14,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderMain;
