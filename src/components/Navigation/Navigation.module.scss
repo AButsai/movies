@@ -1,0 +1,72 @@
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 40px;
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+}
+
+.logoSpan {
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  background-image: url('../../../assets/logo.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.logoText {
+  display: none;
+
+  @media (min-width: 768px) {
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 1.15;
+    color: #ffffff;
+  }
+}
+
+.list {
+  display: flex;
+  align-items: center;
+}
+
+.item {
+  margin-right: 40px;
+}
+
+.item:last-child {
+  margin-right: 0;
+}
+
+.navLink,
+.activeNavLink {
+  padding: 3px 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.15;
+  text-transform: uppercase;
+  color: #ffffff;
+
+  @media (min-width: 768px) {
+    font-size: 14px;
+  }
+}
+
+.navLink:hover {
+  color: #ff6b08;
+}
+
+.activeNavLink {
+  border-bottom: 1px solid #ff6b08;
+}
