@@ -1,4 +1,4 @@
-import { NavLink, Route, Routes, Outlet } from 'react-router-dom';
+import { NavLink, Route, Routes } from 'react-router-dom';
 
 import Container from 'components/Container';
 import Navigation from 'components/Navigation';

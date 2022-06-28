@@ -1,8 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import HomePage from 'views/HomePage';
 import LibraryPage from 'views/LibraryPage';
-import WatchedPage from 'views/WatchedPage';
-import QueuePage from 'views/QueuePage';
 import Footer from 'components/Footer';
 
 import s from './App.module.css';

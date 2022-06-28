@@ -1,10 +1,10 @@
 import { getMovies } from './configMoviesAPI';
 
-export const getTrendingMovieAll = async () => {
+export const getPopularMovies = async () => {
   try {
     const {
       data: { results },
-    } = await getMovies('/trending/all/day', {});
+    } = await getMovies('/movie/popular', {});
 
     return results;
   } catch (error) {
