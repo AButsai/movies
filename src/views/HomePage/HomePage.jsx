@@ -1,9 +1,28 @@
-import HeaderMain from 'components/Header/MainHeader/HeaderMain';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
-import s from './HomePage.module.scss';
+import { fetchMoviePopular } from 'redux/movies/moviesOperations';
+import { allMovies } from 'redux/movies/moviesSelectors';
+
+import HeaderMain from 'components/Header/MainHeader/HeaderMain';
+import Section from 'components/Section';
 
 const HomePage = () => {
-  return <HeaderMain />;
+  const popularMovie = useSelector(allMovies);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchMoviePopular());
+  }, [dispatch]);
+
+  console.log('popularMovie :>> ', popularMovie);
+
+  return (
+    <>
+      <HeaderMain />
+      <Section></Section>
+    </>
+  );
 };
 
 export default HomePage;

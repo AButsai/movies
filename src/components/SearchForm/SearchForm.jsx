@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { BiSearch } from 'react-icons/bi';
 
 import s from './SearchForm.module.scss';
