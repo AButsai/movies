@@ -1,10 +1,16 @@
 import { combineReducers } from '@reduxjs/toolkit';
 import { createReducer } from '@reduxjs/toolkit';
-import { fetchMoviePopular } from './moviesOperations';
+import { fetchMoviePopular, fetchGanres } from './moviesOperations';
 
 const movies = createReducer([], {
   [fetchMoviePopular.fulfilled]: (state, { payload }) => {
-    return [...state, payload];
+    return [...state, ...payload];
+  },
+});
+
+const ganres = createReducer([], {
+  [fetchGanres.fulfilled]: (_, { payload }) => {
+    return payload;
   },
 });
 
@@ -12,5 +18,6 @@ const movies = createReducer([], {
 
 export default combineReducers({
   movies,
+  ganres,
   // isLoading,
 });

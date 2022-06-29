@@ -1,0 +1,36 @@
+.item {
+  border-radius: 5px;
+  overflow: hidden;
+  transition: transform 250ms ease-in-out, box-shadow 250ms ease-in-out;
+
+  &:hover {
+    transform: scale(1.01);
+    box-shadow: 0 0 20px 3px rgba(255, 107, 1, 0.5);
+  }
+}
+
+.img {
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.wrapTitle {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  padding: 0 5px;
+}
+
+.title {
+  margin-bottom: 7px;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  color: #ff6b08;
+}
+
+.span {
+}
