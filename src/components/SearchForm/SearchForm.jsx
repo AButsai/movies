@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import { BiSearch } from 'react-icons/bi';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 import { fetchMoviesSearch } from 'redux/movies/moviesOperations';
 
 import s from './SearchForm.module.scss';
 
 const SearchForm = () => {
+  const navigate = useNavigate();
   const [query, setQuery] = useState('');
 
   const dispatch = useDispatch();
@@ -23,6 +25,7 @@ const SearchForm = () => {
       return;
     }
 
+    navigate('/search', { replace: true });
     dispatch(fetchMoviesSearch(query));
 
     setQuery('');
