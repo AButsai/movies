@@ -1,9 +1,7 @@
-import { NavLink, Route, Routes } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import Container from 'components/Container';
 import Navigation from 'components/Navigation';
-import WatchedPage from 'views/WatchedPage';
-import QueuePage from 'views/QueuePage';
 
 import s from './HeaderLibrary.module.scss';
 
@@ -29,11 +27,6 @@ const HeaderLibrary = () => {
           </ul>
         </Container>
       </header>
-
-      <Routes>
-        <Route path="watched" element={<WatchedPage />} />
-        <Route path="queue" element={<QueuePage />} />
-      </Routes>
     </>
   );
 };

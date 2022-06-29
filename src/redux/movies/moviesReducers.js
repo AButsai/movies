@@ -7,12 +7,14 @@ import {
 } from './moviesOperations';
 
 const movies = createReducer([], {
+  [fetchMoviesSearch.pending]: () => [],
   [fetchMoviePopular.fulfilled]: (state, { payload }) => {
     return [...state, ...payload];
   },
 });
 
 const searchMovies = createReducer([], {
+  [fetchMoviePopular.pending]: () => [],
   [fetchMoviesSearch.fulfilled]: (state, { payload }) => {
     return [...state, ...payload];
   },
