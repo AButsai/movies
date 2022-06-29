@@ -8,3 +8,16 @@ export const Status = {
   RESOLVED: 'resolved',
   REJECTED: 'rejected',
 };
+
+export function releaseData(str) {
+  return str.substr(0, 4);
+}
+
+export function sliceGenres(data) {
+  if (data.length > 2) {
+    const str = data.slice(0, 2).join(', ');
+    return str + ', Others';
+  }
+
+  return data.slice(0, 2).join(', ');
+}

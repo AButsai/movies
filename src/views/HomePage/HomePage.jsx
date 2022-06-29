@@ -1,26 +1,29 @@
 import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
-import { fetchMoviePopular } from 'redux/movies/moviesOperations';
-import { allMovies } from 'redux/movies/moviesSelectors';
+import { fetchMoviePopular, fetchGanres } from 'redux/movies/moviesOperations';
 
 import HeaderMain from 'components/Header/MainHeader/HeaderMain';
 import Section from 'components/Section';
+import Container from 'components/Container';
+import MoviesItemsList from 'components/MoviesItemsList';
 
 const HomePage = () => {
-  const popularMovie = useSelector(allMovies);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchMoviePopular());
+    dispatch(fetchGanres());
   }, [dispatch]);
-
-  console.log('popularMovie :>> ', popularMovie);
 
   return (
     <>
       <HeaderMain />
-      <Section></Section>
+      <Section>
+        <Container>
+          <MoviesItemsList />
+        </Container>
+      </Section>
     </>
   );
 };

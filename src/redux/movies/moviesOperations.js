@@ -12,3 +12,15 @@ export const fetchMoviePopular = createAsyncThunk(
     }
   }
 );
+
+export const fetchGanres = createAsyncThunk(
+  'movies/getGanres',
+  async (_, { rejectWithValue }) => {
+    try {
+      const ganres = await API.getGanres();
+      return ganres;
+    } catch (error) {
+      return rejectWithValue(error);
+    }
+  }
+);
