@@ -1,10 +1,15 @@
 import { useState } from 'react';
 import { BiSearch } from 'react-icons/bi';
+import { useDispatch } from 'react-redux';
+
+import { fetchMoviesSearch } from 'redux/movies/moviesOperations';
 
 import s from './SearchForm.module.scss';
 
-const SearchForm = ({ onSubmit }) => {
+const SearchForm = () => {
   const [query, setQuery] = useState('');
+
+  const dispatch = useDispatch();
 
   const handleChange = e => {
     const { value } = e.target;
@@ -18,7 +23,7 @@ const SearchForm = ({ onSubmit }) => {
       return;
     }
 
-    onSubmit(query);
+    dispatch(fetchMoviesSearch(query));
 
     setQuery('');
   };

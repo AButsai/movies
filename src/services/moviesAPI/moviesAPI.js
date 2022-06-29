@@ -11,6 +11,18 @@ export const getPopularMovies = async () => {
   }
 };
 
+export const getMoviesSearch = async query => {
+  try {
+    const {
+      data: { results },
+    } = await getMovies('search/movie', { params: { query } });
+
+    return results;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export const getGanres = async () => {
   try {
     const {

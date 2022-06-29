@@ -18,7 +18,7 @@ const posterPath = poster => {
   return 'https://github.com/AButsai/moove/blob/main/src/images/plug.jpg?raw=true';
 };
 
-const MovieItem = ({ movie, ganres }) => {
+const MovieItem = ({ movie, genres }) => {
   const { id, poster_path, title, release_date, genre_ids } = movie;
 
   return (
@@ -27,7 +27,7 @@ const MovieItem = ({ movie, ganres }) => {
       <div className={s.wrapTitle}>
         <h2 className={s.title}>{title}</h2>
         <p className={s.subtitle}>
-          {sliceGenres(sortGenres(ganres, genre_ids))}
+          {sliceGenres(sortGenres(genres, genre_ids))}
           <span className={s.span}> | </span>
           {releaseData(release_date)}
         </p>

@@ -13,6 +13,18 @@ export const fetchMoviePopular = createAsyncThunk(
   }
 );
 
+export const fetchMoviesSearch = createAsyncThunk(
+  'movies/getMoviesSearch',
+  async (query, { rejectWithValue }) => {
+    try {
+      const searchMuvies = await API.getMoviesSearch(query);
+      return searchMuvies;
+    } catch (error) {
+      return rejectWithValue(error);
+    }
+  }
+);
+
 export const fetchGanres = createAsyncThunk(
   'movies/getGanres',
   async (_, { rejectWithValue }) => {
