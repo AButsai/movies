@@ -1,2 +1,3 @@
 export const allMovies = state => state.movies.movies;
-export const allGanres = state => state.movies.ganres;
+export const allGenres = state => state.movies.genres;
+export const allSearchMovies = state => state.movies.searchMovies;

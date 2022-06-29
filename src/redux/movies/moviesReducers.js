@@ -1,6 +1,10 @@
 import { combineReducers } from '@reduxjs/toolkit';
 import { createReducer } from '@reduxjs/toolkit';
-import { fetchMoviePopular, fetchGanres } from './moviesOperations';
+import {
+  fetchMoviePopular,
+  fetchGanres,
+  fetchMoviesSearch,
+} from './moviesOperations';
 
 const movies = createReducer([], {
   [fetchMoviePopular.fulfilled]: (state, { payload }) => {
@@ -8,16 +12,30 @@ const movies = createReducer([], {
   },
 });
 
-const ganres = createReducer([], {
+const searchMovies = createReducer([], {
+  [fetchMoviesSearch.fulfilled]: (state, { payload }) => {
+    return [...state, ...payload];
+  },
+});
+
+const genres = createReducer([], {
   [fetchGanres.fulfilled]: (_, { payload }) => {
     return payload;
   },
 });
 
+// const search = createReducer('', {
+//   [movieSearchActions]: (_, { payload }) => {
+//     return payload;
+//   },
+// });
+
 // const isLoading = createReducer(false, {});
 
 export default combineReducers({
   movies,
-  ganres,
+  genres,
+  searchMovies,
+  // search,
   // isLoading,
 });
