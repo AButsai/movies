@@ -21,3 +21,23 @@ export function sliceGenres(data) {
 
   return data.slice(0, 2).join(', ');
 }
+
+export const sortGenres = (genres, genreId) => {
+  const genresArray = [];
+  for (const genId of genreId) {
+    genres.filter(({ id, name }) => id === genId && genresArray.push(name));
+  }
+  return genresArray;
+};
+
+export const posterPath = poster => {
+  if (poster) {
+    return PATH_IMAGE + poster;
+  }
+
+  return 'https://github.com/AButsai/moove/blob/main/src/images/plug.jpg?raw=true';
+};
+
+export function popularityToFixed(num) {
+  return num.toFixed(1);
+}

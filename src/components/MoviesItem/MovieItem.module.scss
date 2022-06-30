@@ -1,4 +1,5 @@
 .item {
+  position: relative;
   border-radius: 5px;
   overflow: hidden;
   transition: transform 250ms ease-in-out, box-shadow 250ms ease-in-out;
@@ -6,6 +7,10 @@
   &:hover {
     transform: scale(1.01);
     box-shadow: 0 0 20px 3px rgba(255, 107, 1, 0.5);
+  }
+
+  &:hover .backdrop {
+    transform: translateY(0);
   }
 }
 
@@ -33,4 +38,103 @@
 }
 
 .span {
+}
+
+.backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 10px;
+
+  background-color: rgba(255, 255, 255, 0.9);
+  transform: translateY(100%);
+  transition: transform 250ms ease-in-out;
+}
+
+.backdropTitle {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.33;
+  color: #000000;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.filmСharacterizationItem {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.filmСharacterizationItem:last-child {
+  margin-bottom: 20px;
+}
+
+.filmСharacterizationValue,
+.filmСharacterizationTitle {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  color: #8c8c8c;
+}
+
+.filmСharacterizationTitle {
+  width: 69px;
+  margin-right: 39px;
+}
+
+.filmСharacterizationValue {
+  width: 160px;
+  color: #000000;
+}
+
+.backdropAbout {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.33;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.backdropOverview {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.33;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+.backdropBtnWathed,
+.backdropBtnQueue {
+  position: absolute;
+  bottom: 10px;
+  width: 120px;
+  padding: 10px 0;
+
+  font-size: 16px;
+  font-weight: 500;
+
+  border: none;
+  background-color: transparent;
+  border: 2px solid #ff6b08;
+  border-radius: 5px;
+  color: #000000;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #ff6b08;
+    color: #ffffff;
+  }
+}
+
+.backdropBtnWathed {
+  left: 10px;
+}
+
+.backdropBtnQueue {
+  right: 10px;
 }
