@@ -1,25 +1,36 @@
-import { PATH_IMAGE, sliceGenres, releaseData } from 'helpers/helpers';
+import {
+  sliceGenres,
+  releaseData,
+  sortGenres,
+  posterPath,
+  popularityToFixed,
+} from 'helpers/helpers';
 
 import s from './MovieItem.module.scss';
 
-const sortGenres = (genres, genreId) => {
-  const genresArray = [];
-  for (const genId of genreId) {
-    genres.filter(({ id, name }) => id === genId && genresArray.push(name));
-  }
-  return genresArray;
-};
-
-const posterPath = poster => {
-  if (poster) {
-    return PATH_IMAGE + poster;
-  }
-
-  return 'https://github.com/AButsai/moove/blob/main/src/images/plug.jpg?raw=true';
+const createElementP = (title = '', value) => {
+  return (
+    <li className={s.filmСharacterizationItem}>
+      <p className={s.filmСharacterizationTitle}>{title}</p>
+      <p className={s.filmСharacterizationValue}>{value}</p>
+    </li>
+  );
 };
 
 const MovieItem = ({ movie, genres }) => {
-  const { id, poster_path, title, release_date, genre_ids } = movie;
+  console.log('movie :>> ', movie);
+  const {
+    id,
+    poster_path,
+    title,
+    release_date,
+    genre_ids,
+    overview,
+    original_title,
+    popularity,
+    vote_average,
+    vote_count,
+  } = movie;
 
   return (
     <li key={id} className={s.item}>
@@ -31,6 +42,24 @@ const MovieItem = ({ movie, genres }) => {
           <span className={s.span}> | </span>
           {releaseData(release_date)}
         </p>
+      </div>
+      <div className={s.backdrop}>
+        <h3 className={s.backdropTitle}>{title}</h3>
+        <ul>
+          {createElementP('Vote / Votes', `${vote_average} / ${vote_count}`)}
+          {createElementP('Popularity', popularityToFixed(popularity))}
+          {createElementP('Original Title', original_title)}
+          {createElementP('Ganres', sortGenres(genres, genre_ids).join(', '))}
+        </ul>
+
+        <p className={s.backdropAbout}>ABOUT</p>
+        <p className={s.backdropOverview}>{overview}</p>
+        <button className={s.backdropBtnWathed} type="botton">
+          Watched
+        </button>
+        <button className={s.backdropBtnQueue} type="botton">
+          Queue
+        </button>
       </div>
     </li>
   );
