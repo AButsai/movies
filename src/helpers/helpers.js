@@ -1,6 +1,9 @@
+export const KEY_WATCHED = 'watched';
+export const KEY_QUEUE = 'queue';
+
 export const PATH_IMAGE = 'https://image.tmdb.org/t/p/w1280';
 export const DEFAULT_IMAGE =
-  'https://cdn.pixabay.com/photo/2016/04/01/10/11/avatar-1299805__340.png';
+  'https://github.com/AButsai/moove/blob/main/src/images/plug.jpg?raw=true';
 
 export const Status = {
   IDLE: 'idle',
@@ -35,7 +38,7 @@ export const posterPath = poster => {
     return PATH_IMAGE + poster;
   }
 
-  return 'https://github.com/AButsai/moove/blob/main/src/images/plug.jpg?raw=true';
+  return DEFAULT_IMAGE;
 };
 
 export function popularityToFixed(num) {
