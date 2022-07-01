@@ -6,9 +6,11 @@ import {
   popularityToFixed,
 } from 'helpers/helpers';
 
+import ButtonForBackdrop from './ButtonForBackdrop';
+
 import s from './MovieItem.module.scss';
 
-const createElementP = (title = '', value) => {
+const createElementP = (title, value) => {
   return (
     <li className={s.filmСharacterizationItem}>
       <p className={s.filmСharacterizationTitle}>{title}</p>
@@ -51,15 +53,9 @@ const MovieItem = ({ movie, genres }) => {
           {createElementP('Original Title', original_title)}
           {createElementP('Ganres', sortGenres(genres, genre_ids).join(', '))}
         </ul>
-
         <p className={s.backdropAbout}>ABOUT</p>
         <p className={s.backdropOverview}>{overview}</p>
-        <button className={s.backdropBtnWathed} type="botton">
-          Watched
-        </button>
-        <button className={s.backdropBtnQueue} type="botton">
-          Queue
-        </button>
+        <ButtonForBackdrop movieId={id} />
       </div>
     </li>
   );
