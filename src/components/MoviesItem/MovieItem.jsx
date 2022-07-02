@@ -20,7 +20,6 @@ const createElementP = (title, value) => {
 };
 
 const MovieItem = ({ movie, genres }) => {
-  console.log('movie :>> ', movie);
   const {
     id,
     poster_path,

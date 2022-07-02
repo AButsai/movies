@@ -1,5 +1,8 @@
 import { Routes, Route } from 'react-router-dom';
+
 import HomePage from 'views/HomePage';
+import LoginPage from 'views/LoginPage';
+import RegistrationPage from 'views/RegistrationPage';
 import PopularMovies from 'views/PopularMovies';
 import FoundMoviesPage from 'views/FoundMoviesPage';
 import LibraryPage from 'views/LibraryPage';
@@ -15,6 +18,9 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<HomePage />}>
           <Route index element={<PopularMovies />} />
+          <Route path="search" element={<FoundMoviesPage />} />
+          <Route path="login" element={<LoginPage />} />
+          <Route path="registr" element={<RegistrationPage />} />
           <Route path="search" element={<FoundMoviesPage />} />
         </Route>
         <Route path="/library/" element={<LibraryPage />}>
